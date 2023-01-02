@@ -1,0 +1,13 @@
+springdoc:
+  swagger-ui:
+    path: /api
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jwt:
+    app_secret: "Tokken$%@$%@FS42GF$435&#^KI41590*&MKDNVCCW$400%5265$%N4oi26"
+  jpa:
+    hibernate:
+      ddl-auto: update

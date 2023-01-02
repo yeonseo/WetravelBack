@@ -1,0 +1,66 @@
+springdoc:
+  swagger-ui:
+    path: /api
+
+server:
+  servlet:
+    context-path: /
+  port: 8080
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+logging:
+  file:
+    path: logs
+    name: local
+  level:
+    root: info
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: debug
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+logging:
+  file:
+    path: logs
+    name: dev
+  level:
+    root: info
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: debug
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+logging:
+  file:
+    path: logs
+    name: prod
+  level:
+    root: info
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: info
